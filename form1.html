@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rescue Information Form</title>
+    <style>
+        body {
+            font-family: Baskerville, serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #422a14;
+            color: black; 
+        }
+        .form-container {
+            background:#E5D3B3;
+            margin: auto;
+            width: 80%;
+            max-width: 500px;
+            padding: 2em;
+            border-radius: 20px;
+            border: 2px solid #d1d1d1;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(255, 255, 255, 0.5);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form div {
+            margin: 15px 0;
+        }
+        label, input, button, select, .info-text {
+            margin: 5px;
+            width: 90%;
+            outline: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            
+            color: black; 
+        }
+        .info-text {
+            border: none;
+            background-color: transparent;
+            padding-left: 0;
+            padding-right: 0;
+            font-family:Baskerville, serif ;
+        }
+        input, button, select {
+            background-color: transparent; 
+            border-color: white; 
+        }
+        input::placeholder, select {
+            color: #ddd; 
+        }
+        input:focus, button:focus, select:focus {
+            border-color: #4CAF50;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .radio-options {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .radio-option {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Adoption Form</h1>
+        <form action="tq.html">
+            <div class="info-text"><h3><b>In India, Around 35 million street dogs are wandering around streets, for food, water, shelter, and family.They deserve to have a home.</b></h3></div>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+            </div>
+            <div>
+                <label for="otherPets">Do you have any other pets at home?</label>
+                <select id="otherPets" name="otherPets">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="radio-options">
+                <label>How often will you take the pet to the veterinary hospital?</label><br>
+                <div class="radio-option"><input type="radio" id="vetVisitSick" name="vetVisit" value="Whenever sick" required> Whenever sick</div><br>
+                <div class="radio-option"><input type="radio" id="vetVisitQuarterly" name="vetVisit" value="once in three months"> Once in three months</div><br>
+                <div class="radio-option"><input type="radio" id="vetVisitRarely" name="vetVisit" value="I'm busy, cant take it often"> I'm busy, can't take it often</div><br>
+            </div>
+            <div>
+                <label for="photoUpload">Upload Photo of street dogs (if in good condition):</label>
+                <input type="file" id="photoUpload" name="photoUpload" accept="image/*">
+            </div>
+            <div>
+                <label for="pickupAddress">Pickup Address of dog (with landmark):</label>
+                <input type="text" id="pickupAddress" name="pickupAddress" required>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

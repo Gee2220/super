@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoption</title>
+    <style>
+        body {
+            font-family: Baskerville, serif;
+            margin: 20px;
+            text-align: center;
+            background-color: #422a14;
+            color:white;
+        }
+        .emboss {
+            filter: brightness(120%) contrast(150%);
+            transform: scale(1.05); 
+        }
+        .info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Holy Mariam Animal shelter foundation</h1>
+    <a href="https://www.facebook.com/holymariamanimalshelterfoundation/" target="_blank">
+        <img src="C:\Users\DELL\Documents\ST project\dog14.jpg" alt="Rescue Operation">
+    </a>
+    <div class="info">
+        <p><b>Address:</b> W5PQ+7HJ, Gangai Amman Koil St, Dharmaboopathy Nagar, Kulattur, Chennai, Tamil Nadu 600117</p>
+        <p><b>Contact Number:</b> 9010454993</p>
+        <p><b>Ratings:</b> 2.7 </p>
+    </div>
+    <div class="navigation-buttons">
+        <button onclick="window.history.back();">Back</button>
+        <button onclick="location.href='form1.html';">Next</button>
+    </div>
+<script>
+    const image = document.querySelector('img[alt="Rescue Operation"]');
+    const threshold = 100; 
+
+    document.addEventListener('mousemove', (event) => {
+        const rect = image.getBoundingClientRect();
+        const imageCenterX = rect.left + rect.width / 2;
+        const imageCenterY = rect.top + rect.height / 2;
+        const distance = Math.sqrt(Math.pow(event.clientX - imageCenterX, 2) + Math.pow(event.clientY - imageCenterY, 2));
+
+        if (distance < threshold && !image.classList.contains('emboss')) {
+            image.classList.add('emboss');
+        } else if (distance >= threshold && image.classList.contains('emboss')) {
+            image.classList.remove('emboss');
+        }
+    });
+</script>
+
+</body>
+</html>

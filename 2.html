@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoption</title>
+    <style>
+        body {
+            font-family: Baskerville, serif;
+            margin: 20px;
+            text-align: center;
+            background-color: #422a14;
+            color:white;
+        }
+        .emboss {
+            filter: brightness(120%) contrast(150%);
+            transform: scale(1.05); 
+        }
+        .info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lucky Paws Home Boarding & Day Care Centre</h1>
+    <a href="http://luckypaws.co.in/" target="_blank">
+        <img src="C:\Users\DELL\Documents\ST project\dog12.jpg" alt="Rescue Operation">
+    </a>
+    <div class="info">
+        <p><b>Address:</b>Shree Ezhumalayan Nagar, Kovur, Chennai, Tamil Nadu 600128</p>
+        <p><b>Contact Number:</b> 9677055880</p>
+        <p><b>Ratings:</b> 4.9 </p>
+    </div>
+    <div class="navigation-buttons">
+        <button onclick="window.history.back();">Back</button>
+        <button onclick="location.href='form1.html';">Next</button>
+    </div>
+<script>
+    const image = document.querySelector('img[alt="Rescue Operation"]');
+    const threshold = 100; // Distance in pixels from the image where the effect should trigger
+
+    document.addEventListener('mousemove', (event) => {
+        const rect = image.getBoundingClientRect();
+        const imageCenterX = rect.left + rect.width / 2;
+        const imageCenterY = rect.top + rect.height / 2;
+        const distance = Math.sqrt(Math.pow(event.clientX - imageCenterX, 2) + Math.pow(event.clientY - imageCenterY, 2));
+
+        if (distance < threshold && !image.classList.contains('emboss')) {
+            image.classList.add('emboss');
+        } else if (distance >= threshold && image.classList.contains('emboss')) {
+            image.classList.remove('emboss');
+        }
+    });
+</script>
+
+</body>
+</html>

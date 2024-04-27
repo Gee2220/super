@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rescue Information Form</title>
+    <style>
+        body {
+            font-family: Baskerville, serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #422a14;
+            color: black; /* Set the default text color to white */
+        }
+        .form-container {
+            background:#E5D3B3;
+            margin: auto;
+            width: 80%;
+            max-width: 500px;
+            padding: 2em;
+            border-radius: 20px;
+            border: 2px solid #d1d1d1;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(255, 255, 255, 0.5);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form div {
+            margin: 15px 0;
+        }
+        label, input, button {
+            margin: 5px;
+            width: 90%;
+            outline: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            
+            color: black; /* Set input and button text color to white */
+        }
+        input, button {
+            background-color: transparent; /* Ensure input fields do not have a background color */
+            border-color: white; /* Make borders white for better visibility */
+        }
+        input::placeholder {
+            color: #ddd; /* Lighter placeholder text for better contrast */
+        }
+        input:focus, button:focus {
+            border-color: #4CAF50;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Rescue Information Form</h1>
+        <form action="tq.html">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+            </div>
+            <div>
+                <label for="pickupAddress">Rescue Pickup Address:</label>
+                <input type="text" id="pickupAddress" name="pickupAddress" required>
+            </div>
+            <div>
+                <label for="locationLandmark">Enter exact location or landmark:</label>
+                <input type="text" id="locationLandmark" name="locationLandmark" required>
+            </div>
+            <div>
+                <label for="photoUpload">Upload Photo Here:</label>
+                <input type="file" id="photoUpload" name="photoUpload" accept="image/*">
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

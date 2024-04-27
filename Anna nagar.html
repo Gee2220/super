@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna Nagar Rescue Operation</title>
+    <style>
+        body {
+            font-family: Baskerville, serif;
+            margin: 20px;
+            text-align: center;
+            background-color: #422a14;
+            color:white;
+        }
+        .navigation-buttons {
+            margin-top: 20px;
+        }
+        .emboss {
+            filter: brightness(120%) contrast(150%);
+            transform: scale(1.05); 
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center;">Sanchu Animal Hospital</h1>
+    <a href="https://sanchuanimalhospital.com/home" target="_blank">
+        <img src="C:\Users\DELL\Documents\ST project\dog8.jpg" alt="Rescue Operation">
+    </a>
+    <div class="info">
+        <p><b>Address:</b> New No.33, Old No, 16 & 18, 4th Ave, AG Block, Shanthi Colony, Anna Nagar, Chennai, Tamil Nadu 600040</p>
+        <p><b>Contact Number:</b>8925500834</p>
+        <p><b>Ratings:<b> 4.3 </p>
+    </div>
+    <div class="navigation-buttons">
+        <button onclick="window.history.back();">Back</button>
+        <button onclick="location.href='form.html';">Next</button>
+    </div>
+<script>
+    const image = document.querySelector('img[alt="Rescue Operation"]');
+    const threshold = 100; // Distance in pixels from the image where the effect should trigger
+
+    document.addEventListener('mousemove', (event) => {
+        const rect = image.getBoundingClientRect();
+        const imageCenterX = rect.left + rect.width / 2;
+        const imageCenterY = rect.top + rect.height / 2;
+        const distance = Math.sqrt(Math.pow(event.clientX - imageCenterX, 2) + Math.pow(event.clientY - imageCenterY, 2));
+
+        if (distance < threshold && !image.classList.contains('emboss')) {
+            image.classList.add('emboss');
+        } else if (distance >= threshold && image.classList.contains('emboss')) {
+            image.classList.remove('emboss');
+        }
+    });
+</script>
+</body>
+</html>
